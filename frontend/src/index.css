@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f8fafc;
+  --color-bg-alt: #f1f5f9;
+  --color-surface: rgba(255, 255, 255, 0.85);
+  --color-surface-soft: rgba(255, 255, 255, 1);
+  --color-border: rgba(226, 232, 240, 0.6);
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-brand: #6366f1;
+  --color-brand-strong: #4f46e5;
+  --color-brand-soft: #a5b4fc;
+  --color-risk: #f43f5e;
+  --color-safe: #10b981;
+  --color-warn: #f59e0b;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', "Segoe UI", Roboto, system-ui, sans-serif;
+  /* Stunning Soft Mesh Gradient Background */
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,100%,94%,1) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225,100%,94%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339,100%,94%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(190,100%,94%,1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Cards */
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: var(--color-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.05),
+    0 8px 10px -6px rgba(0, 0, 0, 0.01),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.05),
+    0 8px 10px -6px rgba(0, 0, 0, 0.01),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus {
+  border-color: var(--color-brand);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-strong) 100%);
+  color: white;
+  padding: 0.65rem 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #818cf8 0%, var(--color-brand) 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+}
+
+.btn-secondary {
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-text);
+  padding: 0.65rem 1.2rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+select {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+select:focus {
+  border-color: var(--color-brand);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+select option {
+  background: #ffffff;
+  color: var(--color-text);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
